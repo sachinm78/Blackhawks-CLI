@@ -7,7 +7,6 @@ class Cli
     def run
         puts "Welcome to Chicago Blackhawks CLI!"
         puts "Here is a list of current players."
-        # puts "m = menu, e = exit"
         Scraper.scrape_blackhawks_roster
         display_player_names
         menu                   
@@ -40,7 +39,7 @@ class Cli
     end
 
     # def choice
-    #     Puts "Would you like to see another player's info? (y/n)"
+    #     Puts "Would you like to see another player's info? (Y/n)"
     #     input = gets.chomp
     #         if input == "y"
     #             menu
