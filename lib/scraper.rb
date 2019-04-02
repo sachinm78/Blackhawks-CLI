@@ -14,14 +14,14 @@ class Scraper
             team_roster = doc.css(".name-col")
                 team_roster.each do |player|
                     if player.css("a").attr("href") != nil
-                    
+                        # player_initial = player.css(".name-col__firstInitial").text.strip
                         player_info = player.css(".name-col__lastName").text.strip
                     
                         url = player.css("a").attr("href").value
                     end
                     if url != nil
-                        player_name = Names.new(player_info, url)
-                        
+                        player_name = Players.new(player_info, url)
+                        # player_name = Players.new(player_initial, player_info, url)
                         player_name.save
                     end
                 end
@@ -30,18 +30,18 @@ class Scraper
     def self.scrape_profile(player)
         html = open(NHL + player.url)
         doc = Nokogiri::HTML(html)
-        binding.pry
-        # player.position = doc.css('player-jumbotron-vitals--attr')[0].text.strip
-        # player.height = doc.css('player-jumbotron-vitals--attr')[1].text.strip
-        # player.weight = doc.css('player-jumbotron-vitals--attr')[2].text.strip
-        # player.age = doc.css('player-jumbotron-vitals--attr')[3].text.strip
-        # player.bio = doc.css('bio__short').text.strip
+        # binding.pry
+        # player.position = doc.css('.player-jumbotron-vitals--attr')[0].text.strip
+        # player.height = doc.css('.player-jumbotron-vitals--attr')[1].text.strip
+        # player.weight = doc.css('.player-jumbotron-vitals--attr')[2].text.strip
+        # player.age = doc.css('.player-jumbotron-vitals--attr')[3].text.strip
+        # player.bio = doc.css('.bio__short').text.strip
     end
 
         
 end
 
-### team_roster = doc.css(".name-col a .name-col__item.name-col__lastName")
+### team_roster = doc.css(".name-col")
 
 ### player = player.css(".name-col__lastName").text.strip
 

@@ -14,26 +14,33 @@ class Cli
 
     def display_player_names
              
-        Names.all.each.with_index(1) do |name, index|
-            puts "#{index}. #{name.name}"
+        Players.all.each.with_index(1) do |name, index|
+            puts "  #{index}. #{name.name}"
         end
     end
+
+            # Players.all.each.with_index(1) do |initial, name, index|
+            #     puts "  #{index}. #{initial} #{name.name}"
+            # end
+
 
     def menu
         puts "Please enter a number from the list below for more information."
         input = gets.chomp
-        player = Names.all[input.to_i - 1]
+        player = Players.all[input.to_i - 1]
             if !player
                 puts "Invalid entry.  Please try again."
                 menu
             else
                 Scraper.scrape_profile(player)
-                puts "Here are the details for #{player.name}"
-                puts "Position: #{player.position}, Age: #{player.age}"
+                puts "      Here are the details for #{player.name}"
                 puts ""
-                puts "Height: #{player.height}, Weight: #{player.weight}"
+                puts "      Position: #{player.position},   Age: #{player.age}"
                 puts ""
-                puts "Bio: #{player.bio}"
+                puts "      Height: #{player.height},   Weight: #{player.weight}"
+                puts ""
+                puts "      Bio: #{player.bio}"
+                puts ""
                 menu  ##choice
             end
     end

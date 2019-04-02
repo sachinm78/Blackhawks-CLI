@@ -1,6 +1,6 @@
 require_relative "../lib/cli.rb"
 require_relative "../lib/scraper.rb"
-require_relative "../lib/names.rb"
+require_relative "../lib/players.rb"
 
 
 Cli.new.run
