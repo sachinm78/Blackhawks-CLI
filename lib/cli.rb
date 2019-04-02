@@ -30,16 +30,24 @@ class Cli
         player = Players.all[input.to_i - 1]
             if !player
                 puts "Invalid entry.  Please try again."
+                puts ""
+                display_player_names
                 menu
             else
                 Scraper.scrape_profile(player)
+                puts ""
                 puts "      Here are the details for #{player.name}"
                 puts ""
                 puts "      Position: #{player.position},   Age: #{player.age}"
                 puts ""
                 puts "      Height: #{player.height},   Weight: #{player.weight}"
                 puts ""
-                puts "      Bio: #{player.bio}"
+                puts "      Bio:"
+                puts ""
+                puts "#{player.bio}"
+                puts "
+                "
+                display_player_names
                 puts ""
                 menu  ##choice
             end
@@ -49,12 +57,14 @@ class Cli
     #     Puts "Would you like to see another player's info? (Y/n)"
     #     input = gets.chomp
     #         if input == "y"
+    #             display_player_names
     #             menu
     #         if input == "n"
     #             puts "Thank you.  See you next time!"
     #             exit
     #         else 
     #             puts "Invalid entry.  Please try again."
+    #             display_player_names
     #             menu
     #         end
     # end
