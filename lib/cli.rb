@@ -34,7 +34,7 @@ class Cli
                 puts "Height: #{player.height}, Weight: #{player.weight}"
                 puts ""
                 puts "Bio: #{player.bio}"
-                menu
+                menu  ##choice
             end
     end
 
