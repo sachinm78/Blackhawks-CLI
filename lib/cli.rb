@@ -23,7 +23,6 @@ class Cli
     def menu
         puts "Please enter a number from the list below for more information."
         input = gets.chomp
-
         player = Names.all[input.to_i - 1]
             if !player
                 puts "Invalid entry.  Please try again."
