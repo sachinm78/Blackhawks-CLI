@@ -30,18 +30,11 @@ class Scraper
     def self.scrape_profile(player)
         html = open(NHL + player.url)
         doc = Nokogiri::HTML(html)
+        player.full_name = doc.css('.player-bio__label')[0].text
         player.position = doc.css('.player-jumbotron-vitals--attr')[0].text.strip
         player.height = doc.css('.player-jumbotron-vitals--attr')[1].text.strip
         player.weight = doc.css('.player-jumbotron-vitals--attr')[2].text.strip
         player.age = doc.css('.player-jumbotron-vitals--attr')[3].text.strip
         player.bio = doc.css('.bio__short').text.strip
-    end
-
-        
+    end        
 end
-
-### team_roster = doc.css(".name-col")
-
-### player = player.css(".name-col__lastName").text.strip
-
-### url = player.css("a").attr("href").value

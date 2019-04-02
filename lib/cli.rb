@@ -7,8 +7,10 @@ class Cli
     def run
         puts "Welcome to Chicago Blackhawks CLI!"
         puts "Here is a list of current players."
+        puts ""
         Scraper.scrape_blackhawks_roster
         display_player_names
+        puts ""
         menu                   
     end
 
@@ -19,9 +21,9 @@ class Cli
         end
     end
 
-            # Players.all.each.with_index(1) do |initial, name, index|
-            #     puts "  #{index}. #{initial} #{name.name}"
-            # end
+        # Players.all.each.with_index(1) do |initial, name, index|
+        #     puts "  #{index}. #{initial} #{name.name}"
+        # end
 
 
     def menu
@@ -32,11 +34,12 @@ class Cli
                 puts "Invalid entry.  Please try again."
                 puts ""
                 display_player_names
-                menu
+                puts ""
+                menu  
             else
                 Scraper.scrape_profile(player)
                 puts ""
-                puts "      Here are the details for #{player.name}"
+                puts "      Here are the details for #{player.full_name}"
                 puts ""
                 puts "      Position: #{player.position},   Age: #{player.age}"
                 puts ""
@@ -54,7 +57,7 @@ class Cli
     end
     
     def choice
-        puts "Would you like to see another player's info? (Y/n)"
+        puts "Would you like to see another player's info? (y/n)"
         input = gets.chomp
             if input == "y"
                 puts ""
