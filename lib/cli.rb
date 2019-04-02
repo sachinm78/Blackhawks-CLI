@@ -29,7 +29,28 @@ class Cli
                 menu
             else
                 Scraper.scrape_profile(player)
+                puts "Here are the details for #{player.name}"
+                puts "Position: #{player.position}, Age: #{player.age}"
+                puts ""
+                puts "Height: #{player.height}, Weight: #{player.weight}"
+                puts ""
+                puts "Bio: #{player.bio}"
+                menu
             end
     end
+
+    # def choice
+    #     Puts "Would you like to see another player's info? (y/n)"
+    #     input = gets.chomp
+    #         if input == "y"
+    #             menu
+    #         if input == "n"
+    #             puts "Thank you.  See you next time!"
+    #             exit
+    #         else 
+    #             puts "Invalid entry.  Please try again."
+    #             menu
+    #         end
+    # end
 end
 

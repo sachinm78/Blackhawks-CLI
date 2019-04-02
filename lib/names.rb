@@ -1,5 +1,5 @@
 class Names
-    attr_accessor :name, :url, :bio
+    attr_accessor :name, :url, :position, :height, :weight, :age, :bio
     @@all = []
 
     def initialize(name, url)

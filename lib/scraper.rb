@@ -26,7 +26,6 @@ class Scraper
         html = open(NHL + player_name.url)
         doc = Nokogiri::HTML(html)
         binding.pry
-        # player.header = doc.css('player-jumbotron-vitals__name-num')
         # player.position = doc.css('player-jumbotron-vitals--attr')[0].text.strip
         # player.height = doc.css('player-jumbotron-vitals--attr')[1].text.strip
         # player.weight = doc.css('player-jumbotron-vitals--attr')[2].text.strip
