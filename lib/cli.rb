@@ -49,24 +49,27 @@ class Cli
                 "
                 display_player_names
                 puts ""
-                menu  ##choice
+                choice
             end
     end
-
-    # def choice
-    #     Puts "Would you like to see another player's info? (Y/n)"
-    #     input = gets.chomp
-    #         if input == "y"
-    #             display_player_names
-    #             menu
-    #         if input == "n"
-    #             puts "Thank you.  See you next time!"
-    #             exit
-    #         else 
-    #             puts "Invalid entry.  Please try again."
-    #             display_player_names
-    #             menu
-    #         end
-    # end
+    
+    def choice
+        puts "Would you like to see another player's info? (Y/n)"
+        input = gets.chomp
+            if input == "y"
+                puts ""
+                display_player_names
+                puts ""
+                menu
+            elsif input == "n"
+                puts "Thank you.  See you next time!"
+                exit
+            else 
+                puts "Invalid entry.  Please try again."
+                puts ""
+                display_player_names
+                puts ""
+                menu
+            end
+    end
 end
-
