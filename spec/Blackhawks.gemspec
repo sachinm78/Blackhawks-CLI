@@ -5,7 +5,7 @@ require "Blackhawks/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "Blackhawks"
-  spec.version       = Blackhawks 0.1.0
+  spec.version       = Blackhawks VERSION
   spec.authors       = ["Sachinm78"]
   spec.email         = ["sachinm78@gmail.com"]
 
