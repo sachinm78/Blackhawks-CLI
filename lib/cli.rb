@@ -5,7 +5,8 @@ require 'pry'
 class Cli
 
     def run
-        puts "Welcome to Chicago Blackhawks CLI!".colorize(:color => :white, :background => :red).bold
+        header
+        puts ""
         puts "Here is a list of current players.".colorize(:color => :white, :background => :red).bold
         puts ""
         Scraper.scrape_blackhawks_roster
@@ -55,20 +56,28 @@ class Cli
     def choice
         puts "Would you like to see another player's info? (y/n)".colorize(:color => :white, :background => :red).bold
         input = gets.chomp
-            if input == "y"
-                puts ""
-                display_player_names
-                puts ""
-                menu
-            elsif input == "n"
-                puts "Thank you.  See you next time!".colorize(:color => :white, :background => :red).bold
-                exit
-            else 
-                puts "Invalid entry.  Please try again.".colorize(:color => :white, :background => :red).bold
-                puts ""
-                display_player_names
-                puts ""
-                menu
-            end
+        if input == "y"
+            puts ""
+            display_player_names
+            puts ""
+            menu
+        elsif input == "n"
+            puts "Thank you.  See you next time!".colorize(:color => :white, :background => :red).bold
+            exit
+        else 
+            puts "Invalid entry.  Please try again.".colorize(:color => :white, :background => :red).bold
+            puts ""
+            display_player_names
+            puts ""
+            menu
+        end
+    end
+
+    def header
+        puts "|-------------------------------------------------------|".colorize(:color => :white, :background => :red).bold
+        puts "|                                                       |".colorize(:color => :white, :background => :red).bold
+        puts "|         Welcome to Chicago Blackhawks CLI!            |".colorize(:color => :white, :background => :red).bold
+        puts "|                                                       |".colorize(:color => :white, :background => :red).bold
+        puts "|-------------------------------------------------------|".colorize(:color => :white, :background => :red).bold
     end
 end

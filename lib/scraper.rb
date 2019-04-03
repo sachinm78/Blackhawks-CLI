@@ -12,17 +12,16 @@ class Scraper
         html = open(ROSTER)
         doc = Nokogiri::HTML(html)
             team_roster = doc.css(".name-col")
-                team_roster.each do |player|
-                    if player.css("a").attr("href") != nil
-                        player_info = player.css(".name-col__lastName").text.strip
-                    
-                        url = player.css("a").attr("href").value
-                    end
-                    if url != nil
-                        player_name = Players.new(player_info, url)
-                        player_name.save
-                    end
-                end
+            team_roster.each do |player|
+            if player.css("a").attr("href") != nil
+                player_info = player.css(".name-col__lastName").text.strip
+                url = player.css("a").attr("href").value
+            end
+            if url != nil
+                player_name = Players.new(player_info, url)
+                player_name.save
+            end
+        end
     end
 
     def self.scrape_profile(player)
