@@ -14,14 +14,12 @@ class Scraper
             team_roster = doc.css(".name-col")
                 team_roster.each do |player|
                     if player.css("a").attr("href") != nil
-                        # player_initial = player.css(".name-col__firstInitial").text.strip
                         player_info = player.css(".name-col__lastName").text.strip
                     
                         url = player.css("a").attr("href").value
                     end
                     if url != nil
                         player_name = Players.new(player_info, url)
-                        # player_name = Players.new(player_initial, player_info, url)
                         player_name.save
                     end
                 end

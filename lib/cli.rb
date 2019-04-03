@@ -21,11 +21,7 @@ class Cli
         end
     end
 
-        # Players.all.each.with_index(1) do |initial, name, index|
-        #     puts "  #{index}. #{initial} #{name.name}"
-        # end
-
-
+       
     def menu
         puts "Please enter a number from the list below for more information.".colorize(:color => :white, :background => :red).bold
         input = gets.chomp
