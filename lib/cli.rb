@@ -33,9 +33,10 @@ class Cli
             if !player
                 puts "Invalid entry.  Please try again.".colorize(:color => :white, :background => :red).bold
                 puts ""
+                
                 display_player_names
                 puts ""
-                menu  
+                menu
             else
                 Scraper.scrape_profile(player)
                 puts ""
@@ -49,14 +50,14 @@ class Cli
                 puts ""
                 puts "#{player.bio}".colorize(:color => :white, :background => :red).bold
                 puts ""
-
-                display_player_names
-                puts ""
+                
                 choice
             end
     end
     
     def choice
+        puts ""
+        puts ""
         puts "Would you like to see another player's info? (y/n)".colorize(:color => :white, :background => :red).bold
         
         input = gets.chomp
