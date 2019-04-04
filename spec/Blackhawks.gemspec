@@ -9,8 +9,23 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sachinm78"]
   spec.email         = ["sachinm78@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{This Ruby Gem provides a CLI view of the 2019 Chicago Blackhawks roster by scraping player names, attributes and bios and providing them to the user.}
+
+  spec.description   = %q{To run the application, enter the Blackhawks folder.
+
+Type "cd Blackhawks" into your console.
+
+Then, run the program by typing:
+
+  "ruby bin/hawks"
+
+This should welcome you to the application and provide a numbered list of players to choose from.
+
+To see more information about a player, enter their number from the lost provided.  
+
+This should print the player\s information to your concole.  You can choose to select another player by pressing "y" when prompted.  This should return you to the list of players where you can enter in another number.  
+
+If you would like to exit the application, enter "n" when prompted.  The program will automatically exit.
   spec.homepage      = "https://github.com/sachinm78/Blackhawks-CLI.git"
   spec.license       = "MIT"
 

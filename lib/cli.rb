@@ -1,6 +1,3 @@
-require 'colorize'
-require 'pry'
-
 
 class Cli
 
@@ -29,8 +26,9 @@ class Cli
         puts "Please enter a number from the list below for more information.".colorize(:color => :white, :background => :red).bold
         
         input = gets.chomp
+        
         player = Players.all[input.to_i - 1]
-            if !player
+            if !player 
                 puts "Invalid entry.  Please try again.".colorize(:color => :white, :background => :red).bold
                 puts ""
                 
