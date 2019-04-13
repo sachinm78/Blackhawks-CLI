@@ -8,7 +8,7 @@ class Cli
         puts "Here is a list of current players.".colorize(:color => :white, :background => :red).bold
         puts ""
         
-        Scraper.scrape_blackhawks_roster
+        Scraper.scrape_cubs_roster
         display_player_names
         
         puts ""
@@ -79,7 +79,7 @@ class Cli
     def header
         puts "|-------------------------------------------------------|".colorize(:color => :white, :background => :red).bold
         puts "|                                                       |".colorize(:color => :white, :background => :red).bold
-        puts "|         Welcome to Chicago Blackhawks CLI!            |".colorize(:color => :white, :background => :red).bold
+        puts "|         Welcome to Chicago Cubs CLI!            |".colorize(:color => :white, :background => :red).bold
         puts "|                                                       |".colorize(:color => :white, :background => :red).bold
         puts "|-------------------------------------------------------|".colorize(:color => :white, :background => :red).bold
     end

@@ -1,16 +1,16 @@
 
 class Scraper
 
-    NHL = "https://www.nhl.com/"
-    ROSTER = "https://www.nhl.com/blackhawks/roster"
+    MLB = "https://www.mlb.com/"
+    ROSTER = "http://m.mlb.com/chc/roster/"
     
-    def self.scrape_blackhawks_roster
+    def self.scrape_cubs_roster
         html = open(ROSTER)
         doc = Nokogiri::HTML(html)
-            team_roster = doc.css(".name-col")
+            team_roster = doc.css(".data roster_table")
             team_roster.each do |player|
             if player.css("a").attr("href") != nil
-                player_info = player.css(".name-col__lastName").text.strip
+                player_info = player.css(".dg-name_display_first_last").text.strip
                 url = player.css("a").attr("href").value
             end
             if url != nil
@@ -21,7 +21,7 @@ class Scraper
     end
 
     def self.scrape_profile(player)
-        html = open(NHL + player.url)
+        html = open(MLB + player.url)
         doc = Nokogiri::HTML(html)
         player.full_name = doc.css('.player-bio__label')[0].text
         player.position = doc.css('.player-jumbotron-vitals--attr')[0].text.strip
