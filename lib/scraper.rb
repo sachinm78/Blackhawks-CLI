@@ -7,7 +7,8 @@ class Scraper
     def self.scrape_cubs_roster
         html = open(ROSTER)
         doc = Nokogiri::HTML(html)
-            team_roster = doc.css(".data roster_table")
+            # binding.pry
+            team_roster = doc.css(".dg-name_display_first_last")
             team_roster.each do |player|
             if player.css("a").attr("href") != nil
                 player_info = player.css(".dg-name_display_first_last").text.strip
@@ -23,7 +24,7 @@ class Scraper
     def self.scrape_profile(player)
         html = open(MLB + player.url)
         doc = Nokogiri::HTML(html)
-        player.full_name = doc.css('.player-bio__label')[0].text
+        player.full_name = doc.css('.full-name')[0].text
         player.position = doc.css('.player-jumbotron-vitals--attr')[0].text.strip
         player.height = doc.css('.player-jumbotron-vitals--attr')[1].text.strip
         player.weight = doc.css('.player-jumbotron-vitals--attr')[2].text.strip

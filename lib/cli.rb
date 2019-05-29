@@ -79,8 +79,10 @@ class Cli
     def header
         puts "|-------------------------------------------------------|".colorize(:color => :white, :background => :red).bold
         puts "|                                                       |".colorize(:color => :white, :background => :red).bold
-        puts "|         Welcome to Chicago Cubs CLI!            |".colorize(:color => :white, :background => :red).bold
+        puts "|         Welcome to Chicago Cubs CLI!                  |".colorize(:color => :white, :background => :red).bold
         puts "|                                                       |".colorize(:color => :white, :background => :red).bold
         puts "|-------------------------------------------------------|".colorize(:color => :white, :background => :red).bold
     end
 end
+
+##test
