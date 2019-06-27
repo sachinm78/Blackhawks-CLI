@@ -84,5 +84,3 @@ class Cli
         puts "|-------------------------------------------------------|".colorize(:color => :white, :background => :red).bold
     end
 end
-
-##test
